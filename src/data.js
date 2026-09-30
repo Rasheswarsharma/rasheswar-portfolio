@@ -1,45 +1,56 @@
 export const projects = [
   {
     id: 1,
-    title: "Cinematic Reel",
+    title: "graphic desiging",
     category: "Video Editing",
     image: "/images/project-1.png",
-    pdf: "/pdfs/project-1-case.pdf",
+    pdf: "/images/project-1-case.pdf",
     pdfImage: "/images/project-1-case-image.png",
-    description: "A fast-paced, cinematic montage of short films and commercial work."
+    description: "tools canva figma Gemini and ai\"s"
   },
   {
     id: 2,
-    title: "Brand Anthem",
+    title: "content writing and script writting",
     category: "Commercial",
     image: "/images/project-2.png",
-    pdf: "/pdfs/project-2-case.pdf",
-    description: "A powerful brand anthem for a global lifestyle brand."
+    description: "manu.ai ,meta.ai,Claude ai",
+    buttons: [
+      { label: "View UiPath Script", url: "/images/UiPathScript.pdf" },
+      { label: "View SCIT Orientation", url: "/images/SCITOrientation'26.pdf" }
+    ]
   },
   {
     id: 3,
-    title: "Documentary Short",
-    category: "Documentary",
-    image: "/images/project-3.png",
-    pdf: "/pdfs/project-3-case.pdf",
-    description: "An award-winning short documentary exploring urban street culture."
+    title: "Video Editing",
+    category: "Video Editing",
+    image: "/images/vedioeditor.png",
+    description: "Creating short-form videos and social media content by combining footage, pacing, music, transitions, and visual elements.",
+    buttons: [
+      { label: "View Intro", url: "/images/THeintro.mp4" },
+      { label: "View Hackathon Teaser", url: "/images/HackathonTeaser.mp4" }
+    ]
   }
 ];
 
 export const services = [
   {
     id: 1,
-    title: "Video Editing",
-    description: "Crafting narratives out of raw footage. From short form content to feature length documentaries."
+    title: "Graphic Design",
+    description: "Creating posters, banners, social media creatives, and visual content using Canva, Figma, Gemini, and AI tools."
   },
   {
     id: 2,
-    title: "Color Grading",
-    description: "Giving your footage a cinematic, premium look that aligns with your brand's visual identity."
+    title: "Content & Script Writing",
+    description: "Writing social media content, captions, creative ideas, and scripts that are simple, clear, and engaging."
   },
   {
     id: 3,
-    title: "Sound Design",
-    description: "Immersive audio mixing and sound design to elevate the emotional impact of your visual stories."
+    title: "Video Editing",
+    description: "Creating short-form videos and social media content by combining footage, pacing, music, transitions, and visual elements."
+  },
+  {
+    id: 4,
+    title: "Outreach & Ad Management",
+    description: "Exploring digital outreach and ad management to help content reach the right audience and support campaign goals."
   }
 ];

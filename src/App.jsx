@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { FiLinkedin, FiPhone } from 'react-icons/fi';
+import { FiInstagram, FiPhone } from 'react-icons/fi';
 import { projects, services } from './data';
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
               <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
             </div>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/in/rasheswar-sharma-116079340" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full border transition-colors ${scrolled ? 'border-ink/20 hover:border-accent hover:text-accent' : 'border-white/20 hover:border-accent hover:text-accent'}`}>
-                <FiLinkedin size={20} strokeWidth={1.5} />
+              <a href="https://www.instagram.com/rasheswar_sharma?stkn=ejJndjd4N3YwNnJo" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full border transition-colors ${scrolled ? 'border-ink/20 hover:border-accent hover:text-accent' : 'border-white/20 hover:border-accent hover:text-accent'}`}>
+                <FiInstagram size={20} strokeWidth={1.5} />
               </a>
             </div>
           </div>
@@ -150,6 +150,22 @@ function App() {
                   </a>
                 </div>
               )}
+              {project.buttons && (
+                <div className="mt-6 flex flex-col items-start border-t border-ink/10 pt-6 space-y-3 w-full">
+                  {project.buttons.map((btn, i) => (
+                    <a 
+                      key={i}
+                      href={btn.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 bg-accent text-white font-medium uppercase tracking-widest text-xs px-6 py-3 hover:bg-accent/90 transition-colors w-fit"
+                    >
+                      <span>{btn.label}</span>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -158,7 +174,7 @@ function App() {
       {/* SERVICES */}
       <section id="services" className="py-24 md:py-32 border-t border-ink/10 px-5 md:px-10 lg:px-[72px] max-w-[1760px] mx-auto">
         <h2 className="font-display font-black uppercase text-5xl md:text-7xl lg:text-[100px] leading-[0.9] tracking-[-0.03em] mb-16 md:mb-24">
-          Expertise
+          [Services]
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16">
           {services.map((service, idx) => (
@@ -193,9 +209,26 @@ function App() {
             <h2 className="font-headline font-bold text-4xl md:text-5xl lg:text-6xl mb-8">
               Bringing ideas to life through design.
             </h2>
-            <p className="text-muted-dark text-lg md:text-xl mb-6">
+            <p className="text-muted-dark text-lg md:text-xl mb-12">
               I’m Rasheswar Sharma, a creative who loves making things look good. From posters and banners to social media content, I enjoy turning simple ideas into visuals that people notice. I’m still learning, experimenting, and building my style with every project.
             </p>
+
+            <div className="border-t border-cream/10 pt-8">
+              <div className="flex items-center space-x-6 mb-6">
+                <span className="font-medium text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-accent">
+                  Leadership & Management
+                </span>
+              </div>
+              <h3 className="font-headline font-bold text-2xl mb-4">
+                PRESIDENT — SCIT SOCIETY
+              </h3>
+              <p className="text-muted-dark text-lg">
+                Alongside my creative work, I’m the President of the SCIT Society at my college, where I work with and coordinate a team of 32 members. The role has given me experience in team management, planning, delegation, communication, and taking responsibility for getting things done.
+              </p>
+              <p className="text-accent font-headline font-bold text-xl mt-6 uppercase tracking-widest">
+                <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> LEAD. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> CREATE. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> EXECUTE.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -207,17 +240,19 @@ function App() {
                 Let's<br/>Create.
               </h2>
               <div className="flex flex-col space-y-4">
-                <a href="mailto:rasheswarsharma217252@gmail.com" className="font-headline text-2xl md:text-4xl hover:text-accent transition-colors underline decoration-1 underline-offset-8 break-all">
+                <a href="mailto:rasheswarsharma217252@gmail.com" className="font-headline text-lg md:text-xl hover:text-accent transition-colors underline decoration-1 underline-offset-8 break-all">
                   rasheswarsharma217252@gmail.com
                 </a>
-                <a href="tel:8923929004" className="font-headline text-2xl md:text-4xl hover:text-accent transition-colors flex items-center space-x-3 w-fit group">
+                <a href="tel:8923929004" className="font-headline text-lg md:text-xl hover:text-accent transition-colors flex items-center space-x-3 w-fit group">
                   <FiPhone className="text-accent transition-transform group-hover:scale-110" />
                   <span className="underline decoration-1 underline-offset-8 break-all">8923929004</span>
                 </a>
               </div>
             </div>
             <div className="flex gap-8 font-medium text-lg">
-              <a href="https://www.linkedin.com/in/rasheswar-sharma-116079340" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
+              <a href="https://www.instagram.com/rasheswar_sharma?stkn=ejJndjd4N3YwNnJo" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <FiInstagram size={32} />
+              </a>
             </div>
           </div>
           <div className="mt-32 pt-8 border-t border-cream/10 flex justify-between text-muted-dark text-sm">
