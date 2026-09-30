@@ -31,9 +31,9 @@ function App() {
           
           <div className="hidden md:flex items-center space-x-10">
             <div className="flex space-x-8 font-medium text-[17px]">
-              <a href="#work" className="hover:text-accent transition-colors">Work</a>
-              <a href="#services" className="hover:text-accent transition-colors">Services</a>
               <a href="#about" className="hover:text-accent transition-colors">About</a>
+              <a href="#services" className="hover:text-accent transition-colors">Services</a>
+              <a href="#work" className="hover:text-accent transition-colors">Work</a>
               <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
             </div>
             <div className="flex space-x-4">
@@ -56,9 +56,9 @@ function App() {
             <X size={32} />
           </button>
           <div className="flex flex-col space-y-8 text-center text-4xl font-headline font-bold">
-            <a href="#work" onClick={() => setMobileMenuOpen(false)}>Work</a>
-            <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+            <a href="#work" onClick={() => setMobileMenuOpen(false)}>Work</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
           </div>
         </div>
@@ -103,11 +103,71 @@ function App() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-5 md:left-10 lg:left-[72px] text-xs font-medium tracking-widest text-white/60 uppercase">
-          Creating from India — Working Worldwide
+        <div className="absolute bottom-5 md:bottom-10 left-5 right-5 md:left-10 md:right-10 lg:left-[72px] lg:right-[72px] flex flex-col md:flex-row justify-between items-start md:items-center text-[10px] md:text-xs font-medium tracking-widest text-white/60 uppercase gap-2 md:gap-0">
+          <div>Creating from India — Working Worldwide</div>
+          <div>Scroll ↓</div>
         </div>
-        <div className="absolute bottom-10 right-5 md:right-10 lg:right-[72px] text-xs font-medium tracking-widest text-white/60 uppercase">
-          Scroll ↓
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="bg-ink text-cream py-24 md:py-32 lg:py-48 px-5 md:px-10 lg:px-[72px]">
+        <div className="max-w-[1760px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center mb-32">
+          <div className="clip-chamfer aspect-[4/5] lg:aspect-square overflow-hidden bg-cream/5">
+            <img src="/images/about-image.png" alt="About Rasheswar" className="w-full h-full object-cover grayscale opacity-80" />
+          </div>
+          <div>
+            <div className="flex items-center space-x-6 mb-8">
+              <div className="w-[60px] h-px bg-accent"></div>
+              <span className="font-medium text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-muted-dark">
+                About Me
+              </span>
+            </div>
+            <h2 className="font-headline font-bold text-4xl md:text-5xl lg:text-6xl mb-8">
+              Bringing ideas to life through design.
+            </h2>
+            <p className="text-muted-dark text-lg md:text-xl mb-12">
+              I’m Rasheswar Sharma, a creative who loves making things look good. From posters and banners to social media content, I enjoy turning simple ideas into visuals that people notice. I’m still learning, experimenting, and building my style with every project.
+            </p>
+
+            <div className="border-t border-cream/10 pt-8">
+              <div className="flex items-center space-x-6 mb-6">
+                <span className="font-medium text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-accent">
+                  Leadership & Management
+                </span>
+              </div>
+              <h3 className="font-headline font-bold text-2xl mb-4">
+                PRESIDENT — SCIT SOCIETY
+              </h3>
+              <p className="text-muted-dark text-lg">
+                Alongside my creative work, I’m the President of the SCIT Society at my college, where I work with and coordinate a team of 32 members. The role has given me experience in team management, planning, delegation, communication, and taking responsibility for getting things done.
+              </p>
+              <p className="text-accent font-headline font-bold text-xl mt-6 uppercase tracking-widest">
+                <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> LEAD. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> CREATE. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> EXECUTE.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-24 md:py-32 border-t border-ink/10 px-5 md:px-10 lg:px-[72px] max-w-[1760px] mx-auto">
+        <h2 className="font-display font-black uppercase text-5xl md:text-7xl lg:text-[100px] leading-[0.9] tracking-[-0.03em] mb-16 md:mb-24">
+          [Services]
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16">
+          {services.map((service, idx) => (
+            <div key={service.id} className="relative pt-8 border-t border-ink/10">
+              <div className="absolute top-0 right-0 -mt-5 text-ink/10 font-display text-8xl">
+                0{idx + 1}
+              </div>
+              <h3 className="font-display font-black uppercase text-3xl md:text-4xl tracking-[-0.02em] mb-6 relative z-10">
+                {service.title}
+              </h3>
+              <p className="text-muted-light text-lg relative z-10">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -171,69 +231,9 @@ function App() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-24 md:py-32 border-t border-ink/10 px-5 md:px-10 lg:px-[72px] max-w-[1760px] mx-auto">
-        <h2 className="font-display font-black uppercase text-5xl md:text-7xl lg:text-[100px] leading-[0.9] tracking-[-0.03em] mb-16 md:mb-24">
-          [Services]
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16">
-          {services.map((service, idx) => (
-            <div key={service.id} className="relative pt-8 border-t border-ink/10">
-              <div className="absolute top-0 right-0 -mt-5 text-ink/10 font-display text-8xl">
-                0{idx + 1}
-              </div>
-              <h3 className="font-display font-black uppercase text-3xl md:text-4xl tracking-[-0.02em] mb-6 relative z-10">
-                {service.title}
-              </h3>
-              <p className="text-muted-light text-lg relative z-10">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ABOUT & CONTACT */}
-      <section id="about" className="bg-ink text-cream py-24 md:py-32 lg:py-48 px-5 md:px-10 lg:px-[72px]">
-        <div className="max-w-[1760px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center mb-32">
-          <div className="clip-chamfer aspect-[4/5] lg:aspect-square overflow-hidden bg-cream/5">
-            <img src="/images/about-image.png" alt="About Rasheswar" className="w-full h-full object-cover grayscale opacity-80" />
-          </div>
-          <div>
-            <div className="flex items-center space-x-6 mb-8">
-              <div className="w-[60px] h-px bg-accent"></div>
-              <span className="font-medium text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-muted-dark">
-                About Me
-              </span>
-            </div>
-            <h2 className="font-headline font-bold text-4xl md:text-5xl lg:text-6xl mb-8">
-              Bringing ideas to life through design.
-            </h2>
-            <p className="text-muted-dark text-lg md:text-xl mb-12">
-              I’m Rasheswar Sharma, a creative who loves making things look good. From posters and banners to social media content, I enjoy turning simple ideas into visuals that people notice. I’m still learning, experimenting, and building my style with every project.
-            </p>
-
-            <div className="border-t border-cream/10 pt-8">
-              <div className="flex items-center space-x-6 mb-6">
-                <span className="font-medium text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-accent">
-                  Leadership & Management
-                </span>
-              </div>
-              <h3 className="font-headline font-bold text-2xl mb-4">
-                PRESIDENT — SCIT SOCIETY
-              </h3>
-              <p className="text-muted-dark text-lg">
-                Alongside my creative work, I’m the President of the SCIT Society at my college, where I work with and coordinate a team of 32 members. The role has given me experience in team management, planning, delegation, communication, and taking responsibility for getting things done.
-              </p>
-              <p className="text-accent font-headline font-bold text-xl mt-6 uppercase tracking-widest">
-                <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> LEAD. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> CREATE. <span style={{ fontFamily: 'cursive', textTransform: 'none' }}>I</span> EXECUTE.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* CONTACT */}
-        <div id="contact" className="max-w-[1760px] mx-auto border-t border-cream/10 pt-24 md:pt-32">
+        <section id="contact" className="bg-ink text-cream py-24 md:py-32 px-5 md:px-10 lg:px-[72px]">
+        <div className="max-w-[1760px] mx-auto border-t border-cream/10 pt-24 md:pt-32">
           <div className="flex flex-col md:flex-row justify-between items-start gap-16">
             <div>
               <h2 className="font-display font-black uppercase text-5xl md:text-7xl lg:text-[120px] leading-[0.9] tracking-[-0.03em] mb-8">
@@ -261,6 +261,7 @@ function App() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
